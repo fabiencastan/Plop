@@ -73,7 +73,7 @@ public :
   {
     float scales[4];
     scales[0] = nComponents == 1 ? (float)_aScale : (float)_rScale;
-    scales[1] = (float)_gScale;
+    scales[1] = (float)_gScale * 2.0;
     scales[2] = (float)_bScale;
     scales[3] = (float)_aScale;
 
@@ -520,7 +520,7 @@ namespace OFX {
 namespace Plugin {
 void getPluginIDs(OFX::PluginFactoryArray &ids)
 {
-  static PlopPluginFactory p("test.plop", 1, 0);
+  static PlopPluginFactory p("test.plop", 2, 0);
   ids.push_back(&p);
 }  
 }
